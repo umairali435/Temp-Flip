@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:gustwarm/colors.dart';
+import 'package:gustwarm/utils/colors.dart';
 import 'package:gustwarm/services/temperature_convert_service.dart';
 
 class CustomCupertinoBottomSheet extends StatelessWidget {

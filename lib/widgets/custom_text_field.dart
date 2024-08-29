@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gustwarm/colors.dart';
+import 'package:gustwarm/utils/colors.dart';
 
 class CustomTextField extends StatefulWidget {
   final TextEditingController controller;

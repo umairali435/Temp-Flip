@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gustwarm/colors.dart';
+import 'package:gustwarm/utils/colors.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -17,60 +17,62 @@ class CustomDrawer extends StatelessWidget {
     }
 
     void launchWebsite() {
-      const url = 'https://temperatureswitcher.blogspot.com/2024/08/temperature-switcher-privacy-policy.html';
+      const url = 'https://gustwarm.blogspot.com/2024/08/gust-warm-privacy-policy.html';
       launchURL(url);
     }
 
     void launchAppStore() {
-      Share.share("""You can find GustWarm: Temperature Flip https://apps.apple.com/store/apps/details?id=com.burhan.TempConversion""");
+      Share.share("""You can find GustWarm: Temperature Flip https://apps.apple.com/store/apps/details?id=com.muteer.gustwarm""");
     }
 
     return SizedBox(
       width: MediaQuery.of(context).size.width / 1.5,
       child: Container(
         color: AppColors.whiteColor,
-        child: Column(
-          children: [
-            // ClipRRect(
-            //   borderRadius: BorderRadius.circular(10.0),
-            //   child: Image.asset(
-            //     "assets/app_icon.png",
-            //     width: 150.0,
-            //     height: 150.0,
-            //   ),
-            // ),
-            const Divider(),
-            ListTile(
-              onTap: () {
-                launchWebsite();
-              },
-              leading: const Icon(
-                Icons.privacy_tip,
-                color: AppColors.primaryColor,
-              ),
-              title: const Text(
-                "Privacy Policy",
-                style: TextStyle(
-                  color: AppColors.primaryColor,
+        child: SafeArea(
+          child: Column(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10.0),
+                child: Image.asset(
+                  "assets/app_icon.png",
+                  width: 150.0,
+                  height: 150.0,
                 ),
               ),
-            ),
-            ListTile(
-              onTap: () {
-                launchAppStore();
-              },
-              leading: const Icon(
-                Icons.share,
-                color: AppColors.primaryColor,
-              ),
-              title: const Text(
-                "Share App",
-                style: TextStyle(
+              const Divider(),
+              ListTile(
+                onTap: () {
+                  launchWebsite();
+                },
+                leading: const Icon(
+                  Icons.privacy_tip,
                   color: AppColors.primaryColor,
                 ),
+                title: const Text(
+                  "Privacy Policy",
+                  style: TextStyle(
+                    color: AppColors.primaryColor,
+                  ),
+                ),
               ),
-            ),
-          ],
+              ListTile(
+                onTap: () {
+                  launchAppStore();
+                },
+                leading: const Icon(
+                  Icons.share,
+                  color: AppColors.primaryColor,
+                ),
+                title: const Text(
+                  "Share App",
+                  style: TextStyle(
+                    color: AppColors.primaryColor,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
